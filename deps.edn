@@ -1,0 +1,10 @@
+{:deps {org.clojure/clojure {:mvn/version "1.10.0"}
+        org.clojure/tools.logging {:mvn/version "0.4.1"}
+        ch.qos.logback/logback-classic {:mvn/version "1.2.3"}
+        cheshire {:mvn/version "5.8.1"}
+        tcsavage/clj-boolean {:git/url "https://github.com/tcsavage/clj-boolean" :sha "c8a45b372118e092b34063e70ff0deac7e95f8d9"}
+        tcsavage/clj-es-utils {:git/url "https://github.com/tcsavage/clj-es-utils" :sha "f81c726dfc73e94766d8501bb2c6fbf581d2562d"}}
+ :paths ["src" "resources"]
+ :aliases {:pack {:extra-deps {pack/pack.alpha {:git/url "https://github.com/juxt/pack.alpha.git"
+                                                :sha "81b9e47d992b17aa3e3af1a47aed1f0287ebe9b8"}}
+                  :main-opts ["-m"]}}}
