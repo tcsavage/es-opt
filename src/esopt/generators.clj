@@ -1,5 +1,5 @@
 (ns esopt.generators
-  (:require [clj-boolean.analysis :as pass-distrib]
+  (:require [clj-boolean.analysis :as analysis]
             [clj-boolean.pretty :as pretty]
             [clj-boolean.syntax :as syn]
             [clojure.core :as cc])
