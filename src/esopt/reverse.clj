@@ -55,11 +55,15 @@
         query (select-query range)]
     (apply gen/range field (apply concat query))))
 
+(defmethod es->ir-node :exists
+  [{exists :exists}]
+  (gen/exists (:field exists)))
+
 (defmethod es->ir-node :bool
   [{{filter :filter should :should must :must must-not :must_not} :bool}]
   (let [anded (when (or (seq filter) (seq must)) (concat must filter))
         ored (when (seq should) should)
-        ored-not (when (seq must-not) must-not)]
+        ored-not (cond (map? must-not) [must-not] (seq must-not) must-not)]
     (syn/and
      (some->> anded (apply syn/and))
      (some->> ored (apply syn/or))

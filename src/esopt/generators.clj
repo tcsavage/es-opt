@@ -21,3 +21,6 @@
   [path child]
   (syn/node :es/nested :path path :child child))
 
+(defn exists
+  [field]
+  (syn/node :es/exists :field field))

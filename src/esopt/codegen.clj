@@ -165,3 +165,7 @@
   [{id :id}]
   {:ids {:values [id]}})
 
+(defmethod emit-node :es/exists
+  [{field :field}]
+  {:exists {:field field}})
+
